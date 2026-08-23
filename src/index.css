@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-base-900: #1e1f22;
+  --color-base-800: #2b2d31;
+  --color-base-700: #313338;
+  --color-base-600: #3f4147;
+  --color-base-400: #949ba4;
+  --color-base-100: #f2f3f5;
+
+  --color-paper-100: #ffffff;
+  --color-paper-200: #f2f3f5;
+  --color-paper-300: #e3e5e8;
+  --color-paper-400: #6d6f78;
+  --color-paper-900: #1e1f22;
+
+  --color-pink: #ff6fb5;
+  --color-pink-soft: #ffd1e8;
+  --color-pink-muted: #7a4c63;
+
+  --color-online: #23a55a;
+
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-paper-100 text-paper-900 dark:bg-base-800 dark:text-base-100 font-sans transition-colors duration-200;
+  }
+  ::selection {
+    @apply bg-pink/30;
+  }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-base-600 rounded-full; }
+}
