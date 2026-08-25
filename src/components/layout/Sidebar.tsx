@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { sections } from "../../data/sections";
 import { User } from "lucide-react";
+import { sections } from "../../data/sections";
+import ProfileCard from "../ProfileCard";
 
 export default function Sidebar() {
+  const [profileOpen, setProfileOpen] = useState(false);
+
   return (
     <aside className="hidden md:flex flex-col w-60 shrink-0 bg-paper-200 dark:bg-base-900 border-r border-paper-300 dark:border-base-600">
       <div className="px-4 py-4 border-b border-paper-300 dark:border-base-600">
@@ -28,15 +32,16 @@ export default function Sidebar() {
               }`
             }
           >
-            <span className="text-paper-400 dark:text-base-400 text-xs w-4 text-center">
-              #
-            </span>
+            <span className="text-paper-400 dark:text-base-400 text-xs w-4 text-center">#</span>
             {s.label}
           </NavLink>
         ))}
       </nav>
 
-      <div className="px-3 py-3 border-t border-paper-300 dark:border-base-600 flex items-center gap-2">
+      <button
+        onClick={() => setProfileOpen(true)}
+        className="px-3 py-3 border-t border-paper-300 dark:border-base-600 flex items-center gap-2 hover:bg-paper-300/60 dark:hover:bg-base-700 transition-colors text-left"
+      >
         <div className="relative">
           <div className="w-8 h-8 rounded-full bg-pink/20 flex items-center justify-center text-pink">
             <User size={16} />
@@ -45,9 +50,11 @@ export default function Sidebar() {
         </div>
         <div className="text-xs leading-tight">
           <p className="font-medium">Althea</p>
-          <p className="text-paper-400 dark:text-base-400">Open to work</p>
+          <p className="text-paper-400 dark:text-base-400">Online</p>
         </div>
-      </div>
+      </button>
+
+      <ProfileCard open={profileOpen} onClose={() => setProfileOpen(false)} />
     </aside>
   );
 }

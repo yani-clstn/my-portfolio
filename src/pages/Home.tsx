@@ -45,7 +45,7 @@ export default function Home() {
         <p className="mt-3 text-sm">
           <span className="font-semibold">Offerly</span> — a job application
           tracker I built end-to-end (React, Hono, Neon Postgres) to manage my
-          own Taiwan job search.
+          own job search.
         </p>
       </motion.div>
 
