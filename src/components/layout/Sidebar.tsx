@@ -13,29 +13,32 @@ export default function Sidebar() {
         <p className="font-mono text-xs text-paper-400 dark:text-base-400 tracking-wide">
           PORTFOLIO SERVER
         </p>
-        <p className="font-semibold text-sm mt-0.5">Althea's workspace</p>
+        <p className="font-semibold text-sm mt-0.5">Elijah's workspace</p>
       </div>
 
       <nav className="flex-1 overflow-y-auto py-3 px-2 space-y-0.5">
         <p className="px-2 text-[11px] font-semibold uppercase tracking-wider text-paper-400 dark:text-base-400 mb-1">
           Channels
         </p>
-        {sections.map((s) => (
-          <NavLink
-            key={s.id}
-            to={s.path}
-            className={({ isActive }) =>
-              `flex items-center gap-2 px-2 py-1.5 rounded-md text-sm transition-colors ${
-                isActive
-                  ? "bg-pink/15 text-pink font-medium"
-                  : "text-paper-900/70 dark:text-base-100/70 hover:bg-paper-300/60 dark:hover:bg-base-700"
-              }`
-            }
-          >
-            <span className="text-paper-400 dark:text-base-400 text-xs w-4 text-center">#</span>
-            {s.label}
-          </NavLink>
-        ))}
+        {sections.map((s) => {
+          const Icon = s.icon;
+          return (
+            <NavLink
+              key={s.id}
+              to={s.path}
+              className={({ isActive }) =>
+                `flex items-center gap-2 px-2 py-1.5 rounded-md text-sm transition-colors ${
+                  isActive
+                    ? "bg-pink/15 text-pink font-medium"
+                    : "text-paper-900/70 dark:text-base-100/70 hover:bg-paper-300/60 dark:hover:bg-base-700"
+                }`
+              }
+            >
+              <Icon size={14} className="shrink-0" />
+              {s.label}
+            </NavLink>
+          );
+        })}
       </nav>
 
       <button
@@ -49,8 +52,8 @@ export default function Sidebar() {
           <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-online border-2 border-paper-200 dark:border-base-900" />
         </div>
         <div className="text-xs leading-tight">
-          <p className="font-medium">Althea</p>
-          <p className="text-paper-400 dark:text-base-400">Online</p>
+          <p className="font-medium">Elijah</p>
+          <p className="text-paper-400 dark:text-base-400">Open to work</p>
         </div>
       </button>
 
