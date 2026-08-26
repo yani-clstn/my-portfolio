@@ -39,7 +39,7 @@ export default function Topbar() {
         <span className="font-semibold">Althea</span>
         <span className="text-paper-400 dark:text-base-400">·</span>
         <span className="w-2 h-2 rounded-full bg-online inline-block" />
-        <span className="text-paper-400 dark:text-base-400">Open to work · Taiwan 2027</span>
+        <span className="text-paper-400 dark:text-base-400">Online · Philippines</span>
       </div>
 
       <div className="flex items-center gap-3">

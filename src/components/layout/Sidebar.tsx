@@ -13,7 +13,7 @@ export default function Sidebar() {
         <p className="font-mono text-xs text-paper-400 dark:text-base-400 tracking-wide">
           PORTFOLIO SERVER
         </p>
-        <p className="font-semibold text-sm mt-0.5">Elijah's workspace</p>
+        <p className="font-semibold text-sm mt-0.5">Althea's workspace</p>
       </div>
 
       <nav className="flex-1 overflow-y-auto py-3 px-2 space-y-0.5">
@@ -52,7 +52,7 @@ export default function Sidebar() {
           <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-online border-2 border-paper-200 dark:border-base-900" />
         </div>
         <div className="text-xs leading-tight">
-          <p className="font-medium">Elijah</p>
+          <p className="font-medium">Althea</p>
           <p className="text-paper-400 dark:text-base-400">Open to work</p>
         </div>
       </button>
