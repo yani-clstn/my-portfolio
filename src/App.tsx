@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
 import AppShell from "./components/layout/AppShell";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
 import Terminal from "./pages/Terminal";
 import LiveChat from "./pages/LiveChat";
 
@@ -21,8 +23,8 @@ export default function App() {
       <AppShell>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<Placeholder title="about" />} />
-          <Route path="/projects" element={<Placeholder title="projects" />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<Placeholder title="skills" />} />
           <Route path="/taiwan-plan" element={<Placeholder title="taiwan-plan" />} />
           <Route path="/blog" element={<Placeholder title="blog" />} />

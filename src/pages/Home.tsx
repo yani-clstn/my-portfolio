@@ -1,31 +1,7 @@
 import { motion } from "framer-motion";
-import { Pin, User, Hand } from "lucide-react";
+import { Pin, Hand } from "lucide-react";
 import GithubPinkCalendar from "../components/GithubPinkCalendar";
-
-function Message({
-  time,
-  children,
-}: {
-  time: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="flex gap-3 group">
-      <div className="w-8 h-8 rounded-full bg-pink/15 flex items-center justify-center text-pink shrink-0 mt-0.5">
-        <User size={16} />
-      </div>
-      <div className="min-w-0">
-        <div className="flex items-baseline gap-2">
-          <span className="font-semibold text-sm">Althea</span>
-          <span className="text-[11px] text-paper-400 dark:text-base-400 font-mono">
-            {time}
-          </span>
-        </div>
-        <div className="text-sm leading-relaxed">{children}</div>
-      </div>
-    </div>
-  );
-}
+import ChatMessage from "../components/ChatMessage";
 
 export default function Home() {
   return (
@@ -45,29 +21,29 @@ export default function Home() {
         <p className="mt-3 text-sm">
           <span className="font-semibold">Offerly</span> — a job application
           tracker I built end-to-end (React, Hono, Neon Postgres) to manage my
-          own job search.
+          own Taiwan job search.
         </p>
       </motion.div>
 
       <div className="space-y-5">
-        <Message time="Today at 09:14">
+        <ChatMessage time="Today at 09:14">
           <span className="inline-flex items-center gap-1.5">
             Hey, I'm Althea <Hand size={14} className="text-pink" />
           </span>{" "}
-          — CS student building my way toward a tech career in Taiwan.
-        </Message>
-        <Message time="Today at 09:15">
+          — CS student building my way toward a frontend role in Taiwan.
+        </ChatMessage>
+        <ChatMessage time="Today at 09:15">
           This portfolio is itself a project — Discord-themed because it's
           the UI I stare at every day, and pink because, well, it's my color.
-        </Message>
-        <Message time="Today at 09:16">
+        </ChatMessage>
+        <ChatMessage time="Today at 09:16">
           <div className="flex items-center gap-3">
             <span>Here's my GitHub activity:</span>
           </div>
           <div className="mt-2">
-            <GithubPinkCalendar username="yani-clstn" />
+            <GithubPinkCalendar username="your-github-username" />
           </div>
-        </Message>
+        </ChatMessage>
       </div>
     </div>
   );
